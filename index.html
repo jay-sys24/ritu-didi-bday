@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Didi! 🎂</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;800&display=swap');
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  text-align: center;
+  background: linear-gradient(135deg, #170d32, #57256f, #d64f91);
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  padding: 90px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero {
+  background:
+    radial-gradient(circle at 50% 40%, #b7479d88, transparent 55%);
+}
+
+.tag {
+  border: 1px solid #ffffff66;
+  background: #ffffff18;
+  padding: 10px 22px;
+  border-radius: 50px;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(42px, 8vw, 85px);
+  line-height: 1.25;
+  margin: 28px 0 15px;
+  text-shadow: 0 0 35px #ff8fda88;
+}
+
+h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(32px, 5vw, 55px);
+}
+
+p {
+  line-height: 1.9;
+  max-width: 620px;
+  font-size: 16px;
+}
+
+.emoji {
+  font-size: 85px;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  50% { transform: translateY(-16px) rotate(5deg); }
+}
+
+.btn {
+  border: none;
+  border-radius: 50px;
+  padding: 15px 28px;
+  margin: 12px;
+  font: 600 15px 'Poppins', sans-serif;
+  color: #76265f;
+  background: white;
+  cursor: pointer;
+  text-decoration: none;
+  transition: .25s;
+  box-shadow: 0 8px 30px #0002;
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 10px 35px #ff9cde66;
+}
+
+.pink-btn {
+  background: linear-gradient(90deg, #ff9fd6, #ffd0eb);
+}
+
+.card {
+  width: min(90%, 650px);
+  padding: 35px;
+  background: #ffffff12;
+  border: 1px solid #ffffff35;
+  border-radius: 28px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 60px #12051d33;
+}
+
+.memory {
+  font-size: 45px;
+  margin: 15px;
+}
+
+.photo-frame {
+  width: min(85vw, 360px);
+  padding: 12px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ffb1df, #fff, #d7a6ff);
+  box-shadow: 0 0 60px #ff90dd55;
+  transform: rotate(-2deg);
+  transition: .4s;
+}
+
+.photo-frame:hover { transform: rotate(0) scale(1.03); }
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 17px;
+  background: #57256f;
+}
+
+.signature {
+  margin-top: 45px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #ffd6ef;
+}
+
+.heart {
+  position: fixed;
+  bottom: -40px;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  to { transform: translateY(-115vh) rotate(360deg); opacity: 0; }
+}
+
+section > * { z-index: 1; }
+
+#confetti {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+footer {
+  padding: 25px;
+  font-size: 12px;
+  color: #ffffffaa;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confetti"></canvas>
+
+<section class="hero">
+  <div class="tag">✨ OCTOBER 20 · A SPECIAL DAY ✨</div>
+
+  <div class="emoji">🎂</div>
+
+  <h1>Happy Birthday,<br>Ritu Didi! 💗</h1>
+
+  <p>
+    
+    I didn't forget your bday i just wanted to surprise you! :)
+  </p>
+
+  <button class="btn pink-btn"
+    onclick="document.getElementById('message').scrollIntoView()">
+    Your Surprise Awaits 💌 ↓
+  </button>
+
+  <p>🎀 ✨ 🦋 ✨ 🎀</p>
+</section>
+
+<section id="message">
+  <div class="card">
+    <div class="memory">💖🌸💖</div>
+
+    <h2>To My Amazing Didi</h2>
+
+    <p>
+      Happy Birthday to the most wonderful sister ever!
+      🥹💕
+    </p>
+
+    <p>
+      You deserve all the happiness, laughter, love,
+      and beautiful moments this world has to offer.
+      May every dream you have come closer to reality
+      and may your smile never fade.
+    </p>
+
+    <p>
+      HAPPY DUSSEHRA TOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!
+    </p>
+
+    <h2 style="font-size:32px">Love you loads! 🫶</h2>
+  </div>
+
+  <button class="btn pink-btn" onclick="party()">
+    🎉 MAKE A WISH!
+  </button>
+</section>
+
+<section>
+  <div class="emoji">🎁</div>
+  <h2>A Little Birthday Magic</h2>
+
+  <div class="card">
+    <p>
+      ✨ More happiness<br>
+      💗 More unforgettable memories<br>
+      🌷 More reasons to smile<br>
+      🦋 More dreams coming true<br>
+      👑 And a lifetime of being amazing!
+    </p>
+  </div>
+
+  <p>Ready for the BIG FINALE? 👀</p>
+
+  <button class="btn pink-btn"
+    onclick="document.getElementById('final').scrollIntoView()">
+    OPEN YOUR FINAL SURPRISE 🎀
+  </button>
+</section>
+
+<section id="final">
+  <div class="tag">THE STAR OF THE DAY ⭐</div>
+
+  <h2>And Finally...</h2>
+
+  <p>
+    CLICK THE BUTTON FAST!
+  </p>
+
+  <div class="photo-frame">
+    <!-- Put your sister's photo beside index.html
+         and name it sister-photo.jpg -->
+    <img src="sister-photo.jpg"
+      alt="My amazing sister"
+      onerror="this.onerror=null;this.src='https://placehold.co/500x625/57256f/ffffff?text=Add+Her+Photo+Here';">
+  </div>
+
+  <h1 style="font-size:clamp(35px,7vw,65px)">
+    YOU'RE THE BEST!!
+  </h1>
+
+  <p>
+    Keep shining, keep smiling, and never stop being
+    the wonderful person you are. 🦋
+  </p>
+
+  <button class="btn pink-btn" onclick="party()">
+    🎉 TAP FOR INFINITE BIRTHDAY VIBES 🎉
+  </button>
+
+  <p class="signature">
+    MADE WITH 💗 AND A LITTLE CHAOS<br>
+    <strong>CREATED BY JAY KHATANA 👑</strong>
+  </p>
+</section>
+
+<footer>
+  A little website, a lot of love. 💖 · October 20
+</footer>
+
+<script>
+// Floating hearts in the background
+const heartSymbols = ['💗', '💕', '✨', '💖', '🌸', '🦋'];
+
+function floatingHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.textContent =
+    heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.fontSize = (14 + Math.random() * 20) + 'px';
+
+  const duration = 5 + Math.random() * 6;
+  heart.style.animationDuration = duration + 's';
+
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), duration * 1000);
+}
+
+setInterval(floatingHeart, 450);
+
+// Real canvas confetti — no external library needed
+const canvas = document.getElementById('confetti');
+const ctx = canvas.getContext('2d');
+
+let pieces = [];
+let animationRunning = false;
+
+function resizeCanvas() {
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = window.innerWidth * dpr;
+  canvas.height = window.innerHeight * dpr;
+  canvas.style.width = window.innerWidth + 'px';
+  canvas.style.height = window.innerHeight + 'px';
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+function party() {
+  const colors = [
+    '#ff5da2', '#ffd166', '#ffffff',
+    '#c77dff', '#80ffdb', '#ff91e8'
+  ];
+
+  // Several bursts for a bigger celebration!
+  for (let burst = 0; burst < 4; burst++) {
+    setTimeout(() => {
+      const originX = Math.random() * window.innerWidth;
+      const originY = window.innerHeight * 0.35;
+
+      for (let i = 0; i < 100; i++) {
+        pieces.push({
+          x: originX,
+          y: originY,
+          vx: (Math.random() - 0.5) * 13,
+          vy: -Math.random() * 12 - 2,
+          size: Math.random() * 7 + 3,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rotation: Math.random() * 360,
+          spin: (Math.random() - 0.5) * 12,
+          gravity: 0.18 + Math.random() * 0.12,
+          life: 150 + Math.random() * 80
+        });
+      }
+
+      if (!animationRunning) {
+        animationRunning = true;
+        requestAnimationFrame(animateConfetti);
+      }
+    }, burst * 180);
+  }
+}
+
+function animateConfetti() {
+  ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+  pieces = pieces.filter(p => p.life > 0 && p.y < window.innerHeight + 50);
+
+  for (const p of pieces) {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += p.gravity;
+    p.vx *= 0.99;
+    p.rotation += p.spin;
+    p.life--;
+
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.rotation * Math.PI / 180);
+    ctx.globalAlpha = Math.min(1, p.life / 30);
+    ctx.fillStyle = p.color;
+    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.65);
+    ctx.restore();
+  }
+
+  if (pieces.length > 0) {
+    requestAnimationFrame(animateConfetti);
+  } else {
+    animationRunning = false;
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+  }
+}
+
+// A little welcome celebration!
+window.addEventListener('load', () => {
+  setTimeout(party, 700);
+});
+</script>
+
+</body>
+</html>
